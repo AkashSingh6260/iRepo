@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A personalized birthday experience for Ishika — with love, memories, and surprises.">
+    <title>Happy Birthday Ishika 💕</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="adwaitlogo.jpg" type="image/jpg">
+</head>
+
+<body>
+
+    <!-- ═══════════════════════════════════════════
+         Navigation Dots (side)
+         ═══════════════════════════════════════════ -->
+    <nav class="nav-dots" aria-label="Section navigation">
+        <button class="nav-dot active" data-section="hero" data-label="Home"
+            onclick="document.getElementById('hero').scrollIntoView({behavior:'smooth'})" aria-label="Home"></button>
+        <button class="nav-dot" data-section="gallery" data-label="Memories"
+            onclick="document.getElementById('gallery').scrollIntoView({behavior:'smooth'})"
+            aria-label="Memories"></button>
+        <button class="nav-dot" data-section="love" data-label="I Love You"
+            onclick="document.getElementById('love').scrollIntoView({behavior:'smooth'})"
+            aria-label="Things I Love"></button>
+        <button class="nav-dot" data-section="timeline" data-label="Our Story"
+            onclick="document.getElementById('timeline').scrollIntoView({behavior:'smooth'})"
+            aria-label="Timeline"></button>
+        <button class="nav-dot" data-section="letters" data-label="Letters"
+            onclick="document.getElementById('letters').scrollIntoView({behavior:'smooth'})"
+            aria-label="Letters"></button>
+        <button class="nav-dot" data-section="birthday-letter" data-label="Message"
+            onclick="document.getElementById('birthday-letter').scrollIntoView({behavior:'smooth'})"
+            aria-label="Birthday Message"></button>
+        <button class="nav-dot" data-section="game" data-label="Game"
+            onclick="document.getElementById('game').scrollIntoView({behavior:'smooth'})" aria-label="Game"></button>
+        <button class="nav-dot" data-section="quiz" data-label="Quiz"
+            onclick="document.getElementById('quiz').scrollIntoView({behavior:'smooth'})" aria-label="Quiz"></button>
+        <button class="nav-dot" data-section="finale" data-label="Surprise"
+            onclick="document.getElementById('finale').scrollIntoView({behavior:'smooth'})"
+            aria-label="Finale"></button>
+    </nav>
+
+    <!-- ═══════════════════════════════════════════
+         Floating Music Toggle
+         ═══════════════════════════════════════════ -->
+    <button class="music-toggle" id="music-toggle" aria-label="Toggle background music">
+        <span class="music-icon">🎵</span>
+    </button>
+
+    <!-- ═══════════════════════════════════════════
+         1. HERO SECTION
+         ═══════════════════════════════════════════ -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <h1 id="hero-title"></h1>
+            <p id="hero-subtitle">Today is all about celebrating you and the joy you bring to my life ✨</p>
+
+            <div class="hero-hearts" id="hero-hearts">
+                <span class="hero-heart">❤️</span>
+                <span class="hero-heart">💖</span>
+                <span class="hero-heart">💕</span>
+                <span class="hero-heart">💗</span>
+                <span class="hero-heart">❤️</span>
+            </div>
+
+            <button class="cta-button" id="hero-cta">
+                Start the Celebration 🎉
+            </button>
+        </div>
+
+        <div class="scroll-indicator" id="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         2. PHOTO GALLERY (Rendered from data.js)
+         ═══════════════════════════════════════════ -->
+    <section class="gallery-section" id="gallery">
+        <div class="container">
+            <h2 class="section-title reveal">Our Beautiful Memories</h2>
+            <p class="section-subtitle reveal">Every photo tells a story of us 📸</p>
+            <div class="gallery-grid" id="gallery-grid"></div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         3. THINGS I LOVE ABOUT YOU (Rendered from data.js)
+         ═══════════════════════════════════════════ -->
+    <section class="love-section" id="love">
+        <div class="container">
+            <h2 class="section-title reveal">Things I Love About You</h2>
+            <div class="section-divider reveal">💕</div>
+            <div class="love-grid" id="love-grid"></div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         4. MEMORY TIMELINE (Rendered from data.js)
+         ═══════════════════════════════════════════ -->
+    <section class="timeline-section" id="timeline">
+        <div class="container">
+            <h2 class="section-title reveal">Our Story</h2>
+            <p class="section-subtitle reveal">A journey of love, laughter, and beautiful moments 🕰️</p>
+            <div class="timeline" id="timeline-container"></div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         5. OPEN WHEN LETTERS (Rendered from data.js)
+         ═══════════════════════════════════════════ -->
+    <section class="letters-section" id="letters">
+        <div class="container">
+            <h2 class="section-title reveal">Open When...</h2>
+            <p class="section-subtitle reveal">Sealed with love — tap to open each letter 💌</p>
+            <div class="letters-grid" id="letters-grid"></div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         6. BIRTHDAY LETTER
+         ═══════════════════════════════════════════ -->
+    <section class="letter-section" id="birthday-letter">
+        <div class="container">
+            <div class="letter-card reveal-scale">
+                <h2 class="letter-title">A Special Message for You</h2>
+
+                <p class="letter-paragraph">
+                    On this special day, I want you to know how grateful I am to have you in my life.
+                    Your laughter fills my days with joy, your love gives me strength, and your presence
+                    makes everything better. You are not just my girlfriend, you are my best friend,
+                    my partner in crime, and the love of my life.
+                </p>
+
+                <p class="letter-paragraph">
+                    Today, we celebrate you – your kindness, your beauty, your amazing spirit, and
+                    all the wonderful things that make you uniquely you. I hope this new year of your
+                    life brings you endless happiness, incredible adventures, and all your dreams come true.
+                </p>
+
+                <p class="letter-paragraph letter-signature">
+                    Happy Birthday, my love! Here's to many more years of laughter, love, and beautiful memories
+                    together. 💕
+                </p>
+
+                <div class="letter-hearts">
+                    <span class="letter-heart-anim">💖</span>
+                    <span class="letter-heart-anim">💕</span>
+                    <span class="letter-heart-anim">💗</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         7. CATCH HEARTS MINI-GAME
+         ═══════════════════════════════════════════ -->
+    <section class="game-section" id="game">
+        <div class="container">
+            <h2 class="section-title reveal">Catch the Hearts! 💝</h2>
+            <p class="section-subtitle reveal">Tap the falling hearts before they disappear — how many can you
+                catch?</p>
+
+            <div class="game-wrapper reveal">
+                <div class="game-stats">
+                    <div class="game-stat">
+                        <div class="game-stat-label">Score</div>
+                        <div class="game-stat-value" id="game-score">0</div>
+                    </div>
+                    <div class="game-stat">
+                        <div class="game-stat-label">Time</div>
+                        <div class="game-stat-value" id="game-time">30</div>
+                    </div>
+                </div>
+
+                <div class="game-area" id="game-area">
+                    <button class="game-start-btn" id="game-start-btn">Start Game 🎮</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         8. QUIZ SECTION (Rendered dynamically)
+         ═══════════════════════════════════════════ -->
+    <section class="quiz-section" id="quiz">
+        <div class="container">
+            <h2 class="section-title reveal">How Well Do You Know Us? 💭</h2>
+            <p class="section-subtitle reveal">A cute little quiz to test our memories!</p>
+
+            <div class="quiz-container reveal" id="quiz-container">
+                <!-- Injected by quiz.js -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         9. SECRET MESSAGE
+         ═══════════════════════════════════════════ -->
+    <section class="secret-section" id="secret-section">
+        <div class="container">
+            <div class="secret-card reveal">
+                <div class="secret-trigger" role="button" tabindex="0" aria-label="Secret message">
+                    <div class="secret-sparkle">✨</div>
+                    <p class="secret-hint">Psst... try tapping this section 5 times! 🤫</p>
+                    <div class="secret-progress-bar">
+                        <div class="secret-progress"></div>
+                    </div>
+                </div>
+
+                <div class="secret-hidden" style="display: none;">
+                    <h3 class="secret-title">You Found My Secret! 🤫</h3>
+                    <p class="secret-text">
+                        Here's something I've never told you before: From the very first moment I saw you, I knew my
+                        life was about to change forever. You are my greatest adventure, my deepest comfort, and my most
+                        beautiful dream come true. I love you more than words could ever express — and I'll spend every
+                        day trying to show you just how much. You are my everything, Ishika. Always and forever. ❤️
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         10. FINAL SURPRISE
+         ═══════════════════════════════════════════ -->
+    <section class="finale-section" id="finale">
+        <div class="container">
+            <div class="finale-wrapper reveal-scale">
+                <button class="finale-btn" id="final-surprise-btn">
+                    ✨ Open Your Final Surprise ✨
+                </button>
+
+                <div class="finale-message" id="final-message">
+                    <div class="finale-big-heart">💖</div>
+                    <h2 class="finale-title">Happy Birthday, Ishika!</h2>
+                    <p class="finale-text">
+                        You are the most amazing, beautiful, kind-hearted person I've ever known.
+                        Thank you for being you. Thank you for every smile, every hug, every moment.
+                        Here's to another year of making incredible memories together.
+                        I love you more than all the stars in the sky. Forever yours. ❤️
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         FOOTER
+         ═══════════════════════════════════════════ -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025@adwait &bull; Made with ❤️ for the most amazing person in the world</p>
+        </div>
+    </footer>
+
+    <!-- Main Script (ES Module) -->
+    <script type="module" src="js/app.js"></script>
+
+</body>
+
+</html>

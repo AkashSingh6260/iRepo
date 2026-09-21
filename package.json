@@ -1,0 +1,22 @@
+{
+  "name": "ishika-birthday-project",
+  "version": "1.0.0",
+  "description": "A cinematic, interactive, personalized digital birthday experience for Ishika",
+  "main": "index.html",
+  "type": "module",
+  "scripts": {
+    "start": "npx -y serve . -p 8080",
+    "dev": "npx -y http-server . -p 8080 -c-1 --cors",
+    "preview": "npx -y serve ."
+  },
+  "keywords": [
+    "birthday",
+    "interactive",
+    "gift",
+    "animation",
+    "game",
+    "gallery"
+  ],
+  "author": "Adwait",
+  "license": "MIT"
+}
