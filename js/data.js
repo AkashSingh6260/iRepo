@@ -7,13 +7,13 @@
 
 /* ── Person & Hero Configuration ── */
 export const BIRTHDAY_PERSON = {
-  name: 'Ishika',
+  name: 'madam jii',
   from: 'Adwait',
   year: 2025,
 };
 
 export const HERO_CONFIG = {
-  title: 'Happy Birthday, Ishika 💕',
+  title: 'Happy Birthday madam jii 💕',
   subtitle: 'Today is all about celebrating you and the joy you bring to my life ✨',
   ctaText: 'Start the Celebration 🎉',
 };
