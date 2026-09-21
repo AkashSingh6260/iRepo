@@ -5,9 +5,9 @@
   "main": "index.html",
   "type": "module",
   "scripts": {
-    "start": "npx -y serve . -p 8080",
-    "dev": "npx -y http-server . -p 8080 -c-1 --cors",
-    "preview": "npx -y serve ."
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "keywords": [
     "birthday",
@@ -18,5 +18,15 @@
     "gallery"
   ],
   "author": "Adwait",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "canvas-confetti": "^1.9.4",
+    "lucide-react": "^1.47.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.1.1",
+    "vite": "^8.3.0"
+  }
 }

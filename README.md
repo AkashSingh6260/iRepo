@@ -1,94 +1,83 @@
-# Happy Birthday Ishika 💕 — Digital Birthday Experience
+# Happy Birthday Madam Jii ✦ — A Dark Cinematic Birthday Surprise Experience
 
-A personalized, cinematic, and interactive birthday website built with HTML, CSS, and modern modular ES JavaScript.
+A bespoke, mysterious, and deeply intimate interactive birthday experience crafted by **Akash** for **Ishika ("Madam Jii")**.
+
+Built from scratch using **React + Vite** with a cinematic dark luxury aesthetic (obsidian, midnight navy, royal burgundy, warm champagne gold, and candlelit glow).
 
 ---
 
-## 📁 Modular Project Structure
+## 🧭 The Narrative Arc
+
+$$\text{MYSTERY} \longrightarrow \text{CURIOSITY} \longrightarrow \text{DISCOVERY} \longrightarrow \text{MEMORIES} \longrightarrow \text{EMOTION} \longrightarrow \text{SURPRISE} \longrightarrow \text{FINAL REVEAL ❤️}$$
+
+1. **The Mysterious Prologue** — *"Someone crafted a quiet mystery for you..."* with an ambient gateway button.
+2. **Chapter 01: Grand Entrance** — Celestial typography tribute for Madam Jii.
+3. **Chapter 02: Frozen Memories** — Physical vintage polaroids with tilt physics, likes, and cinematic Lightbox.
+4. **Chapter 03: The Timeline** — Milestone journey tracing the moments when ordinary time turned into destiny.
+5. **Chapter 04: Wax-Sealed Letters** — Five "Open When..." envelopes that unlock and unfold realistically.
+6. **Chapter 05: Things I Never Said** — 3D interactive confession cards that flip to reveal quiet truths.
+7. **Chapter 06: Constellation of Us** — Interactive night sky: touch glowing star nodes to reveal celestial blessings.
+8. **Chapter 07: The Wish** — Architectural birthday cake with an interactive flickering candle: touch the flame to blow it out with rising smoke and golden sparks.
+9. **Chapter 08: Celestial Catch** — 25-second stardust gathering mini-game with custom praise.
+10. **Chapter 09: Lore Retrospective** — Personalized trivia quiz with immediate reflection insights.
+11. **Chapter 10: The Letter** — Deckle-edge parchment birthday letter from Akash.
+12. **Chapter 11: The Vault** — Interactive 4-digit keypad cipher unlocking Akash's deepest hidden note.
+13. **Chapter 12: Grand Finale** — Champagne celebration with full-screen golden stardust fireworks.
+
+---
+
+## 📁 React Architecture
 
 ```text
-├── index.html           # Semantic, clean layout & section wrappers
-├── styles.css           # Premium romantic theme (pink/purple, glassmorphism, responsive)
-├── package.json         # Scripts for local development & preview
-├── vercel.json          # 1-Click deployment config for Vercel
-├── netlify.toml         # Deployment config for Netlify
-├── .github/
-│   └── workflows/
-│       └── deploy.yml   # Automatic GitHub Pages CI/CD workflow
-└── js/
-    ├── data.js          # ⭐ SINGLE SOURCE OF TRUTH: customize photos, letters, quiz, music, messages
-    ├── app.js           # Main app orchestrator
-    ├── gallery.js       # Dynamic photo gallery + fullscreen lightbox & like counter
-    ├── love.js          # "Things I Love About You" cards component
-    ├── timeline.js      # Romantic milestone timeline component
-    ├── letters.js       # Interactive "Open When..." unfoldable letters component
-    ├── quiz.js          # Interactive trivia quiz with score & custom result cards
-    ├── game.js          # "Catch the Hearts" 30-second canvas mini-game
-    ├── music.js         # Floating music player (custom MP3 or romantic synth melody)
-    ├── surprises.js     # 5-Tap secret message, celebration bursts & final confetti
-    ├── particles.js     # Floating romantic background particles
-    ├── animations.js    # Typewriter effect, scroll reveals, and parallax
-    └── utils.js         # Helper functions & animation utilities
+src/
+├── main.jsx                       # React entry point
+├── App.jsx                        # Master stage orchestrator
+├── data/
+│   └── content.js                 # ⭐ SINGLE SOURCE OF TRUTH (photos, letters, quiz, memories)
+├── styles/
+│   ├── index.css                  # Obsidian, champagne, burgundy variables & typography
+│   ├── animations.css             # Candle flicker, star twinkle, 3D flip, smoke dissipating
+│   └── components.css             # Polaroids, glassmorphism, wax seals, lockbox keypad
+├── hooks/
+│   └── useAudio.js                # Ambient piano chord synthesizer & MP3 player hook
+├── components/
+│   ├── Navbar.jsx                 # Minimalist floating chapter navigation
+│   ├── AudioPlayer.jsx            # Floating ambient sound controller
+│   ├── Lightbox.jsx               # Fullscreen cinematic photo modal
+│   └── ParticleCanvas.jsx         # Subtle warm golden stardust motes (non-intrusive)
+└── sections/
+    ├── Prologue.jsx               # Mysterious gateway
+    ├── HeroReveal.jsx             # Chapter 1 Entrance
+    ├── PolaroidGallery.jsx        # Chapter 2 Polaroids
+    ├── Timeline.jsx               # Chapter 3 Memory timeline
+    ├── UnlockedLetters.jsx        # Chapter 4 Wax-seal letters
+    ├── ThingsNeverSaid.jsx        # Chapter 5 3D flip cards
+    ├── ConstellationSky.jsx       # Chapter 6 Stargazing sky
+    ├── InteractiveCake.jsx        # Chapter 7 Candle blow-out
+    ├── MiniGame.jsx               # Chapter 8 Stardust catch
+    ├── TriviaQuiz.jsx             # Chapter 9 Trivia lore
+    ├── LoveLetter.jsx             # Chapter 10 Parchment letter
+    ├── SecretCipher.jsx           # Chapter 11 Lockbox keypad
+    └── GrandFinale.jsx            # Chapter 12 Celebration
 ```
 
 ---
 
-## ⚙️ How to Customize (Only 1 File to Edit!)
+## ⚙️ Customization (Only 1 File)
 
-All personalized content is stored inside **`js/data.js`**. You do not need to touch any HTML!
-
-- **Recipient / Sender Name**: Edit `BIRTHDAY_PERSON` and `HERO_CONFIG`.
-- **Photos**: Add or change image URLs in the `PHOTOS` array.
-- **Love Cards**: Edit or add entries in `LOVE_ITEMS`.
-- **Memory Timeline**: Customize milestones in `TIMELINE`.
-- **"Open When" Letters**: Edit envelopes & letters in `LETTERS`.
-- **Birthday Message**: Update paragraphs in `BIRTHDAY_MESSAGE`.
-- **Quiz Questions**: Customize trivia and answers in `QUIZ_QUESTIONS`.
-- **Secret & Finale Messages**: Edit `SECRET_MESSAGE` and `FINALE_CONFIG`.
-- **Background Music**: Set `audioUrl` in `MUSIC_CONFIG` to `'your-song.mp3'` or leave `null` for the built-in romantic melody.
+To customize any text, milestone, photo, or question, simply edit **`src/data/content.js`**.
 
 ---
 
-## 🚀 Easy Deployment Options (100% Free)
+## 🚀 Deployment (Netlify, Vercel & GitHub Pages Ready)
 
-### Option 1: Vercel (Fastest — 1 Minute)
-1. Push this folder to a GitHub repository.
-2. Go to [vercel.com](https://vercel.com) and click **"Add New Project"**.
-3. Select your repository and click **"Deploy"**.
-4. ✨ You'll instantly receive a live `https://your-project.vercel.app` URL to share with Ishika!
+### Netlify
+- **Command:** `npm run build`
+- **Publish directory:** `dist`
+- *(Or drag-and-drop the `dist` folder directly onto [app.netlify.com/drop](https://app.netlify.com/drop)).*
 
-*Alternatively, run in terminal:*
-```bash
-npx vercel
-```
+### GitHub Pages
+- The included `.github/workflows/deploy.yml` automatically builds and deploys to GitHub Pages on every `git push`.
 
----
-
-### Option 2: Netlify (No Git Required — 30 Seconds)
-1. Go to [app.netlify.com/drop](https://app.netlify.com/drop).
-2. Drag and drop this entire project folder into the browser window.
-3. ✨ Netlify deploys it immediately and gives you a free live URL!
-
----
-
-### Option 3: GitHub Pages
-1. Push this folder to a GitHub repository named e.g. `birthday-ishika`.
-2. Go to your repository **Settings** → **Pages**.
-3. Under **Build and deployment** → **Source**, select **GitHub Actions** (the included `.github/workflows/deploy.yml` will automatically build and publish).
-4. ✨ Your site is live at `https://<your-username>.github.io/<repo-name>/`!
-
----
-
-## 💻 Running Locally
-
-```bash
-# Option A: With npm / npx
-npm start
-# or
-npm run dev
-
-# Option B: Direct HTTP server
-npx -y http-server . -p 8080 -c-1 --cors
-```
-
-Then open `http://localhost:8080` in your browser.
+### Vercel
+- Automatically recognizes Vite and deploys `dist/` with one click.

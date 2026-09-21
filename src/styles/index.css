@@ -1,0 +1,232 @@
+/* ============================================================
+   src/styles/index.css
+   Cinematic Dark Luxury Theme System
+   Obsidian / Midnight Navy / Champagne Gold / Burgundy
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Dancing+Script:wght@500;700&display=swap');
+
+:root {
+  /* Cinematic Dark Foundation */
+  --bg-abyss: #07090e;
+  --bg-obsidian: #0b0e17;
+  --bg-midnight: #101524;
+  --bg-burgundy: #1a0f1d;
+  --bg-card: rgba(16, 21, 36, 0.7);
+  --bg-card-hover: rgba(22, 29, 48, 0.85);
+
+  /* Gold & Champagne Lighting */
+  --gold-primary: #e5c07b;
+  --gold-burnished: #d4af37;
+  --gold-champagne: #f4e4ba;
+  --gold-dim: rgba(212, 175, 55, 0.35);
+  --gold-aura: rgba(229, 192, 123, 0.18);
+  --gold-border: rgba(229, 192, 123, 0.22);
+  --gold-border-bright: rgba(229, 192, 123, 0.6);
+
+  /* Typography Colors */
+  --text-pure: #fcfbf9;
+  --text-ivory: #eae6dd;
+  --text-platinum: #a8acba;
+  --text-muted: #727788;
+  --text-gold: #edd8ad;
+
+  /* Atmospheric Accents */
+  --accent-burgundy: #801831;
+  --accent-rose-gold: #c98a7c;
+  --accent-candle: #ffbe53;
+  --accent-flame: #ff7733;
+
+  /* Fonts */
+  --font-serif-cinematic: 'Cinzel', serif;
+  --font-editorial: 'Cormorant Garamond', serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-handwriting: 'Dancing Script', cursive;
+
+  /* Radii */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+
+  /* Shadows & Glow */
+  --shadow-subtle: 0 10px 30px rgba(0, 0, 0, 0.5);
+  --shadow-cinematic: 0 20px 60px rgba(0, 0, 0, 0.8);
+  --glow-gold: 0 0 40px var(--gold-aura);
+  --glow-candle: 0 0 50px rgba(255, 168, 60, 0.35);
+}
+
+/* Reset & Box Sizing */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+  background-color: var(--bg-abyss);
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-abyss);
+  color: var(--text-ivory);
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+}
+
+/* Subtle Film Grain & Vignette Overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at 50% 50%, transparent 40%, rgba(5, 7, 12, 0.75) 100%);
+  z-index: 999;
+}
+
+/* Typography Utility Classes */
+h1, h2, h3, .cinematic-title {
+  font-family: var(--font-serif-cinematic);
+  color: var(--text-pure);
+  letter-spacing: 0.08em;
+  font-weight: 600;
+}
+
+.editorial-text {
+  font-family: var(--font-editorial);
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: var(--text-gold);
+}
+
+.handwriting {
+  font-family: var(--font-handwriting);
+}
+
+/* General Layout Containers */
+.cinematic-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section-spacing {
+  padding: clamp(80px, 12vh, 160px) 0;
+  position: relative;
+}
+
+/* Chapter Badges */
+.chapter-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 18px;
+  border-radius: var(--radius-full);
+  background: rgba(229, 192, 123, 0.07);
+  border: 1px solid var(--gold-border);
+  font-family: var(--font-serif-cinematic);
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold-primary);
+  margin-bottom: 20px;
+}
+
+.chapter-badge::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--gold-primary);
+  box-shadow: 0 0 10px var(--gold-primary);
+}
+
+/* Section Header Structure */
+.section-header {
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto clamp(40px, 6vw, 70px);
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.2;
+  margin-bottom: 16px;
+  background: linear-gradient(135deg, #ffffff 30%, var(--gold-champagne) 70%, var(--gold-primary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section-subtitle {
+  font-family: var(--font-editorial);
+  font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+  color: var(--text-platinum);
+  font-style: italic;
+  font-weight: 300;
+}
+
+/* Golden Divider */
+.gold-divider {
+  width: 80px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+  margin: 24px auto 0;
+}
+
+/* Buttons */
+.btn-cinematic {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px 36px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, rgba(229, 192, 123, 0.15) 0%, rgba(212, 175, 55, 0.05) 100%);
+  border: 1px solid var(--gold-border-bright);
+  color: var(--gold-champagne);
+  font-family: var(--font-serif-cinematic);
+  font-size: 0.85rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: var(--shadow-subtle), inset 0 0 15px rgba(229, 192, 123, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-cinematic:hover {
+  background: linear-gradient(135deg, rgba(229, 192, 123, 0.28) 0%, rgba(212, 175, 55, 0.12) 100%);
+  border-color: var(--gold-primary);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.25);
+}
+
+.btn-cinematic:active {
+  transform: translateY(0);
+}
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-abyss);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(229, 192, 123, 0.25);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-primary);
+}
